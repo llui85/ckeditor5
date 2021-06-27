@@ -56,7 +56,7 @@ ClassicEditor.builtinPlugins = [
 	Indent,
 	Link,
 	List,
-	MediaEmbed,
+//	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	Table,
@@ -83,10 +83,10 @@ ClassicEditor.defaultConfig = {
 			'outdent',
 			'indent',
 			'|',
-			'uploadImage',
+			//'uploadImage',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
+			//'mediaEmbed',
 			'undo',
 			'redo'
 		]
