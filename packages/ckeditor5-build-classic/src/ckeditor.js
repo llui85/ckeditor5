@@ -34,6 +34,13 @@ import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
 import SpecialCharactersEssential from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
 
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -65,7 +72,13 @@ ClassicEditor.builtinPlugins = [
 	// additions
 	WordCount,
 	SpecialCharacters,
-	SpecialCharactersEssential
+	SpecialCharactersEssential,
+	Underline,
+	Strikethrough,
+	Code,
+	Subscript,
+	Superscript,
+	HorizontalLine
 ];
 
 // Editor configuration.
