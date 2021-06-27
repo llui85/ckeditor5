@@ -2,6 +2,7 @@ node_modules/
 build/
 coverage/
 packages/*/node_modules/
+packages/*/build/
 docs/api/output.json
 external/
 lerna-debug.log

@@ -13,6 +13,8 @@ const { bundler, styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
 
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+
 module.exports = {
 	devtool: 'source-map',
 	performance: { hints: false },
@@ -54,7 +56,10 @@ module.exports = {
 		new webpack.BannerPlugin( {
 			banner: bundler.getLicenseBanner(),
 			raw: true
-		} )
+		} ),
+                new MiniCssExtractPlugin( {
+                        filename: 'styles.css'
+                } )
 	],
 
 	module: {
@@ -63,7 +68,7 @@ module.exports = {
 				test: /\.svg$/,
 				use: [ 'raw-loader' ]
 			},
-			{
+			/*{
 				test: /\.css$/,
 				use: [
 					{
@@ -85,7 +90,23 @@ module.exports = {
 						} )
 					}
 				]
-			}
+			}*/
+                {
+                test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: styles.getPostCssConfig( {
+                            themeImporter: {
+                                themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
+                            },
+                            minify: true
+                        } )
+                    }
+                ]
+            }
 		]
 	}
 };
