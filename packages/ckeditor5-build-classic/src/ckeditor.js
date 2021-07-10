@@ -41,10 +41,13 @@ import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
 
+import ScaffoldEvidence from './scaffold.js';
+
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+        ScaffoldEvidence,
 	Essentials,
 	UploadAdapter,
 	Autoformat,
@@ -85,21 +88,25 @@ ClassicEditor.builtinPlugins = [
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading',
-			'|',
 			'bold',
 			'italic',
+			'underline',
+			'strikethrough',
 			'link',
+			'code',
+			'|',
+			'subscript',
+			'superscript',
+			'|',
 			'bulletedList',
 			'numberedList',
 			'|',
-			'outdent',
-			'indent',
-			'|',
-			//'uploadImage',
-			'blockQuote',
+			'horizontalLine',
 			'insertTable',
-			//'mediaEmbed',
+			'specialCharacters',
+                        '|',
+                        'scaffoldEvidence',
+                        '|',
 			'undo',
 			'redo'
 		]

@@ -26,7 +26,7 @@ module.exports = {
 		library: 'ClassicEditor',
 
 		path: path.resolve( __dirname, 'build' ),
-		filename: 'ckeditor.js',
+		filename: 'ckeditor.min.js',
 		libraryTarget: 'umd',
 		libraryExport: 'default'
 	},
@@ -58,7 +58,7 @@ module.exports = {
 			raw: true
 		} ),
                 new MiniCssExtractPlugin( {
-                        filename: 'styles.css'
+                        filename: 'ckeditor.min.css'
                 } )
 	],
 
